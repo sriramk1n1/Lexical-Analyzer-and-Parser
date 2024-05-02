@@ -1,0 +1,13 @@
+G' -> G
+G -> datatype main_k popen pclose begin_k STMT return_k popen identifier pclose End_k
+STMT -> ST STMT 
+STMT -> "
+ST -> datatype identifier assign_op EXP semicolon
+ST -> identifier assign_op EXP semicolon
+ST -> for_k identifier assign_op EXP to_k EXP do_k STMT endfor_k
+ST -> if_k EXP relop EXP STMT endif_k
+VAL -> identifier
+VAL -> number
+VAL -> identifier [ number ]
+EXP -> VAL operator EXP
+EXP -> VAL
